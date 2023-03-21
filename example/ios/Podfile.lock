@@ -1,0 +1,29 @@
+PODS:
+  - amazon_payment_services_apple_pay (0.0.1):
+    - Flutter
+    - PayFortSDK
+  - Flutter (1.0.0)
+  - PayFortSDK (3.1.0)
+
+DEPENDENCIES:
+  - amazon_payment_services_apple_pay (from `.symlinks/plugins/amazon_payment_services_apple_pay/ios`)
+  - Flutter (from `Flutter`)
+
+SPEC REPOS:
+  trunk:
+    - PayFortSDK
+
+EXTERNAL SOURCES:
+  amazon_payment_services_apple_pay:
+    :path: ".symlinks/plugins/amazon_payment_services_apple_pay/ios"
+  Flutter:
+    :path: Flutter
+
+SPEC CHECKSUMS:
+  amazon_payment_services_apple_pay: 10fc18bfd2673b35d6e7256fa480c753e8ed7503
+  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+  PayFortSDK: a33a8488859d7666b3709f347ebb990697e1d110
+
+PODFILE CHECKSUM: 21b64fbb12492d731c9be90cbe0f2d328bef4b49
+
+COCOAPODS: 1.12.0
