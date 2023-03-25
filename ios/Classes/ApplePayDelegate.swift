@@ -149,11 +149,14 @@ public class ApplePayDelegate : NSObject,PKPaymentAuthorizationViewControllerDel
     
     private func decimal(with string: String) -> NSDecimalNumber {
         let formatter = NumberFormatter()
-        formatter.generatesDecimalNumbers = true
-        let amount = formatter.number(from: string) as? NSDecimalNumber ?? 0
-        return amount;
+//        formatter.generatesDecimalNumbers = true
+        
+        formatter.numberStyle = .decimal
+        formatter.decimalSeparator = "."
+        let amount = formatter.number(from: string)
+        let finalValue = NSDecimalNumber(decimal: amount?.decimalValue ?? 0.0 );
+        return finalValue;
     }
-    
 }
 
 
