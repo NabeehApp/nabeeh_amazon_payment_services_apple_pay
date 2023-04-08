@@ -10,7 +10,7 @@ part 'channel_name.dart';
 
 part 'environment_type.dart';
 
-part 'request_param_model.dart';
+part 'constants/payment_constants.dart';
 
 part 'call_back.dart';
 
