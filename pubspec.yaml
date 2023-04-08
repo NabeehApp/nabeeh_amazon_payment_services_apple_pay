@@ -15,6 +15,9 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.1
+  json_annotation:
+  json_serializable:
+  build_runner:
 
 
 flutter:

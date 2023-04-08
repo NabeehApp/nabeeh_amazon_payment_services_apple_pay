@@ -4,6 +4,7 @@ import 'dart:collection';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'channel_name.dart';
 
@@ -12,6 +13,32 @@ part 'environment_type.dart';
 part 'request_param_model.dart';
 
 part 'call_back.dart';
+
+//stc model
+part 'model/stc_pay/stc_generate_otp.request.dart';
+
+part 'model/stc_pay/stc_generate_otp.response.dart';
+
+part 'model/stc_pay/stc_purchase.request.dart';
+
+part 'model/stc_pay/stc_purchase.response.dart';
+
+//sdk_tok en
+part 'model/sdk_token/sdk_token_request.dart';
+
+part 'model/sdk_token/sdk_token_response.dart';
+
+//payment
+part 'model/base_payment_request.dart';
+
+part 'model/credit_card/credit_card_payment_request.dart';
+
+part 'model/credit_card/credit_card_payment_response.dart';
+
+part 'model/apple_pay/payfort_apple_pay_request.dart';
+part 'model/apple_pay/payfort_apple_pay_response.dart';
+
+part 'amazon_payment_services_apple_pay.g.dart';
 
 class AmazonPaymentServicesApplePay {
   static final MethodChannel _channel = const MethodChannel(AmazonPaymentServicesApplePayChannels.plugin)
