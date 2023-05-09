@@ -11,6 +11,7 @@ class STCPurchaseResponse extends STCPurchaseRequest {
     return _$STCPurchaseResponseFromJson(json);
   }
 
+  @override
   Map<String, dynamic> toJson() => _$STCPurchaseResponseToJson(this);
 
   STCPurchaseResponse({

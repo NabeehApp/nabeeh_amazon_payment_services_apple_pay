@@ -41,6 +41,7 @@ class PayfortApplePayResponse extends PayfortApplePayRequest {
     super.merchantExtra5,
     super.applePayMerchantId = '',
     required super.amount,
+    // ignore: non_constant_identifier_names
     super.ISO4217Factor,
     super.countryCode,
     super.digitalWallet = 'APPLE_PAY',

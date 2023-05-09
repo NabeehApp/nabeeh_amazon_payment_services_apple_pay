@@ -119,5 +119,6 @@ class CreditCardPaymentRequest extends BasePaymentRequest {
 
   factory CreditCardPaymentRequest.fromJson(Map<String, dynamic> json) => _$CreditCardPaymentRequestFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$CreditCardPaymentRequestToJson(this);
 }

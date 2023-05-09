@@ -27,5 +27,6 @@ class STCGenerateOTPResponse extends STCGenerateOTPRequest {
     return _$STCGenerateOTPResponseFromJson(json);
   }
 
+  @override
   Map<String, dynamic> toJson() => _$STCGenerateOTPResponseToJson(this);
 }

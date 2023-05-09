@@ -3,16 +3,9 @@
 part of amazon_payment_services_apple_pay;
 
 @JsonSerializable(fieldRename: FieldRename.snake, includeIfNull: false, explicitToJson: true)
-class CreditCardPaymentResponse extends CreditCardPaymentRequest{
-
-
-
+class CreditCardPaymentResponse extends CreditCardPaymentRequest {
   // The order’s unique reference returned by our system.
   String? fortId;
-
-  // example  -MASTERCARD -VISA ...
-  String? paymentOption;
-
 
   String? authorizationCode;
   String? responseMessage;
@@ -27,20 +20,17 @@ class CreditCardPaymentResponse extends CreditCardPaymentRequest{
   String? cardNumber;
   dynamic status;
 
-
-
-
   CreditCardPaymentResponse({
     required super.command,
     required super.merchantReference,
     required super.amount,
-    super.currency="SAR",
+    super.currency = "SAR",
     super.language,
     required super.customerEmail,
     required super.sdkToken,
     super.tokenName,
     this.fortId,
-    this.paymentOption,
+    super.paymentOption,
     super.eci,
     this.authorizationCode,
     super.orderDescription,
@@ -79,7 +69,8 @@ class CreditCardPaymentResponse extends CreditCardPaymentRequest{
     super.agreementId,
   });
 
-  factory CreditCardPaymentResponse.fromJson(Map<String, dynamic> json) => _$CreditCardPaymentResponseFromJson(json);
+  factory CreditCardPaymentResponse.fromJson(Map<String, dynamic> json) =>
+      _$CreditCardPaymentResponseFromJson(json);
 
   @override
   Map<String, dynamic> toJson() => _$CreditCardPaymentResponseToJson(this);

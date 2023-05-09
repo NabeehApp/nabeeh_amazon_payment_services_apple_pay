@@ -8,6 +8,7 @@ class PayfortApplePayRequest extends BasePaymentRequest {
   // real amount not with iso 4217
   String amount;
   @JsonKey(name: "ISO_4217_factor")
+  // ignore: non_constant_identifier_names
   String ISO4217Factor;
   String countryCode;
   String digitalWallet;
@@ -39,6 +40,7 @@ class PayfortApplePayRequest extends BasePaymentRequest {
     super.merchantExtra5,
     required this.applePayMerchantId,
     required this.amount,
+    // ignore: non_constant_identifier_names
     this.ISO4217Factor = '100',
     this.countryCode = 'SA',
     this.digitalWallet = 'APPLE_PAY',

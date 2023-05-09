@@ -10,6 +10,7 @@ class SdkTokenResponse extends SdkTokenRequest {
     return _$SdkTokenResponseFromJson(json);
   }
 
+  @override
   Map<String, dynamic> toJson() => _$SdkTokenResponseToJson(this);
 
   SdkTokenResponse({
