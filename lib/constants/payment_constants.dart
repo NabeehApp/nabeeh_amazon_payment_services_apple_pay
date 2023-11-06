@@ -33,3 +33,32 @@ enum PaymentConstants {
 
   const PaymentConstants(this.key);
 }
+
+enum PaymentActionConst {
+  booking("BOOKING"),
+  chargeWallet("CHARGE_WALLET");
+
+  final String key;
+
+  const PaymentActionConst(this.key);
+}
+
+enum PaymentEnvironmentConst {
+  sandbox("sandbox"),
+  appleSandbox("apple_sandbox"),
+  production("production"),
+  appleProduction("apple_production");
+
+  final String key;
+
+  const PaymentEnvironmentConst(this.key);
+}
+
+enum Currency {
+  saudiRiyal("SAR"),
+  israelShekel("ILS");
+
+  final String key;
+
+  const Currency(this.key);
+}
