@@ -71,8 +71,8 @@ public class ApplePayDelegate : NSObject,PKPaymentAuthorizationViewControllerDel
         let customerEmailFromApplePay = payment.billingContact?.emailAddress ?? ""
         let customerPhoneFromApplePay = payment.billingContact?.phoneNumber?.stringValue ?? ""
         let customerNameFromApplePay = payment.billingContact?.name?.givenName ?? ""
-        
-        
+        let paymentOption = payment.token.paymentMethod.network?.rawValue.uppercased()
+        print(paymentOption)
         if asyncSuccessful {
             
             var request = [String : String]()
@@ -83,7 +83,10 @@ public class ApplePayDelegate : NSObject,PKPaymentAuthorizationViewControllerDel
             request["currency"] = (requestData?["currency"] as? String) ?? "";
             request["language"] = (requestData?["language"] as? String) ?? "";
             request["sdk_token"] = (requestData?["sdk_token"] as? String) ?? "";
-            request["payment_option"] = (requestData?["payment_option"] as? String) ?? "";
+            if(paymentOption != nil)
+            {
+                request["payment_option"] = paymentOption;
+            }
             request["eci"] = (requestData?["eci"] as? String) ?? "";
             request["order_description"] = (requestData?["order_description"] as? String) ?? "";
             request["customer_ip"] = (requestData?["customer_ip"] as? String) ?? "";
