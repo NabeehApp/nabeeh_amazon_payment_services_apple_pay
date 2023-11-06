@@ -15,10 +15,10 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   final String _platformVersion = 'Unknown';
-  final _amazonPaymentServicesApplePayPlugin = AmazonPaymentServicesApplePay();
 
   @override
   void initState() {
+    AmazonPaymentServicesApplePay();
     super.initState();
   }
 

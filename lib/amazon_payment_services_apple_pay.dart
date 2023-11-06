@@ -1,3 +1,5 @@
+// ignore_for_file: depend_on_referenced_packages
+
 library amazon_payment_services_apple_pay;
 
 import 'dart:collection';
@@ -36,6 +38,7 @@ part 'model/credit_card/credit_card_payment_request.dart';
 part 'model/credit_card/credit_card_payment_response.dart';
 
 part 'model/apple_pay/payfort_apple_pay_request.dart';
+
 part 'model/apple_pay/payfort_apple_pay_response.dart';
 
 part 'amazon_payment_services_apple_pay.g.dart';

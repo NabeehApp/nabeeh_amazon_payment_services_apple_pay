@@ -8,7 +8,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import '../lib/main.dart';
+import 'package:amazon_payment_services_apple_pay_example/main.dart';
 
 
 void main() {
