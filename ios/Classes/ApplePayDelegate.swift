@@ -107,7 +107,7 @@ public class ApplePayDelegate : NSObject,PKPaymentAuthorizationViewControllerDel
             payFort?.presentAsDefault = true
             payFort?.isShowResponsePage = isShowResponsePage ?? true
             
-            print("Request Payfort Get :\(request)")
+//            print("Request Payfort Get :\(request)")
             
             
             payFort?.callPayFortForApplePay(
@@ -123,13 +123,18 @@ public class ApplePayDelegate : NSObject,PKPaymentAuthorizationViewControllerDel
                     
                 },
                 faild: { requestDic, responeDic, message in
-                    
+                    do{
                     print("failed: \(message) - \(requestDic) - \(responeDic)")
+                    print(responeDic);
                     
+                    
+                        try  self.channel?.invokeMethod(Channels.applePayFailed, arguments: ["message": message,"details": responeDic])
+                        controller.dismiss(animated: true)
+                    }catch{
+                        print("Unexpected error: \(error).")
 
-                    self.channel?.invokeMethod(Channels.applePayFailed, arguments: ["message": message,"details": responeDic])
+                    }
                     
-                    controller.dismiss(animated: true)
                     return
                     
                 })

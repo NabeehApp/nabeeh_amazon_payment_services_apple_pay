@@ -36,35 +36,24 @@ part 'model/credit_card/credit_card_payment_request.dart';
 part 'model/credit_card/credit_card_payment_response.dart';
 
 part 'model/apple_pay/payfort_apple_pay_request.dart';
+
 part 'model/apple_pay/payfort_apple_pay_response.dart';
 
 part 'amazon_payment_services_apple_pay.g.dart';
 
 class AmazonPaymentServicesApplePay {
   static final MethodChannel _channel = const MethodChannel(AmazonPaymentServicesApplePayChannels.plugin)
-    ..setMethodCallHandler(_nativeCallHandler);
+    ..setMethodCallHandler(_handelNativeCall);
+
   static ApplePayResultCallback? _applePayResultCallback;
 
   static Future<void> init() async {
     await _channel.invokeMethod(AmazonPaymentServicesApplePayChannels.initialize);
   }
 
-  static Future<void> applePay(
-    Map request,
-    EnvironmentType environmentType, {
-    bool isShowResponsePage = true,
-    required ApplePayResultCallback callback,
-  }) async {
-    _applePayResultCallback = callback;
-    await _channel.invokeMethod(AmazonPaymentServicesApplePayChannels.payWithApplePay, {
-      "isShowResponsePage": isShowResponsePage,
-      "environmentType": describeEnum(environmentType),
-      "requestParam": request,
-    });
-  }
-
-  static Future<void> _nativeCallHandler(MethodCall call) async {
+  static Future<void> _handelNativeCall(MethodCall call) async {
     try {
+      print("MethodCall $call");
       switch (call.method) {
         case AmazonPaymentServicesApplePayChannels.applePaySuccess:
           if (_applePayResultCallback != null) {
@@ -82,5 +71,19 @@ class AmazonPaymentServicesApplePay {
     } catch (e) {
       throw Exception(e);
     }
+  }
+
+  static Future<void> applePay(
+    Map request,
+    EnvironmentType environmentType, {
+    bool isShowResponsePage = true,
+    required ApplePayResultCallback callback,
+  }) async {
+    _applePayResultCallback = callback;
+    await _channel.invokeMethod(AmazonPaymentServicesApplePayChannels.payWithApplePay, {
+      "isShowResponsePage": isShowResponsePage,
+      "environmentType": describeEnum(environmentType),
+      "requestParam": request,
+    });
   }
 }

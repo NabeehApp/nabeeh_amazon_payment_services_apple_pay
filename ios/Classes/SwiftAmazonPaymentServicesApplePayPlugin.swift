@@ -26,22 +26,22 @@ public class SwiftAmazonPaymentServicesApplePayPlugin:NSObject, FlutterPlugin {
         }
         else if call.method==Channels.payWithApplePay{
             
+            SwiftAmazonPaymentServicesApplePayPlugin.channel?.invokeMethod(Channels.initialize, arguments: ["message": "test done "])
             
-            
-            if let param = call.arguments as? [String: Any],
-               let requestParam = param["requestParam"] as? [String:String] {
-                
-                print(requestParam)
-                
-                if let enviroment = param["environmentType"], enviroment as! String == "production" {
-                    payFortController = PayFortController.init(enviroment: .production)
-                }
-                
-                payFortController.presentAsDefault = true
-                delegate.initialize(channel: SwiftAmazonPaymentServicesApplePayPlugin.channel!)
-                
-                delegate.callPayFortForApplePay(payFort:payFortController , requestData: requestParam,isShowResponsePage: param["isShowResponsePage"] as? Bool ?? false)
-            }
+//            if let param = call.arguments as? [String: Any],
+//               let requestParam = param["requestParam"] as? [String:String] {
+//                
+//                print(param["environmentType"])
+//                
+//                if let enviroment = param["environmentType"], enviroment as! String == "production" {
+//                    payFortController = PayFortController.init(enviroment: .production)
+//                }
+//                
+//                payFortController.presentAsDefault = true
+//                delegate.initialize(channel: SwiftAmazonPaymentServicesApplePayPlugin.channel!)
+//                
+//                delegate.callPayFortForApplePay(payFort:payFortController , requestData: requestParam,isShowResponsePage: param["isShowResponsePage"] as? Bool ?? false)
+//            }
             
         }
     }
