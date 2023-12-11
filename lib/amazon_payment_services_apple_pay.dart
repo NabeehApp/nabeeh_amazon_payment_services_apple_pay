@@ -12,7 +12,15 @@ part 'channel_name.dart';
 
 part 'environment_type.dart';
 
+part 'constants/action.dart';
+
+part 'constants/currency.dart';
+
+part 'constants/payfort_environment.dart';
+
 part 'constants/payment_constants.dart';
+
+part 'constants/payment_method.dart';
 
 part 'call_back.dart';
 
