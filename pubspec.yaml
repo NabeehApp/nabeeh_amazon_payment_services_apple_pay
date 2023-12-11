@@ -24,6 +24,7 @@ dev_dependencies:
   json_annotation:
   json_serializable:
   build_runner:
+  watcher: ^1.1.0
 
 
 flutter:

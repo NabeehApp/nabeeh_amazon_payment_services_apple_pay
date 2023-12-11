@@ -375,9 +375,9 @@
     },
     {
       "name": "watcher",
-      "rootUri": "file:///Users/akramassi/.pub-cache/hosted/pub.dev/watcher-1.0.2",
+      "rootUri": "file:///Users/akramassi/.pub-cache/hosted/pub.dev/watcher-1.1.0",
       "packageUri": "lib/",
-      "languageVersion": "2.14"
+      "languageVersion": "3.0"
     },
     {
       "name": "web",
@@ -404,7 +404,7 @@
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2023-11-06T18:06:15.034395Z",
+  "generated": "2023-11-18T10:36:13.800250Z",
   "generator": "pub",
   "generatorVersion": "3.1.3"
 }

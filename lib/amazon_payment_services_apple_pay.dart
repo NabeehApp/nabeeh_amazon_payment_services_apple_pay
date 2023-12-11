@@ -11,8 +11,14 @@ part 'channel_name.dart';
 part 'environment_type.dart';
 
 part 'constants/payment_constants.dart';
+part 'constants/payfort_environment.dart';
+part 'constants/action.dart';
+part 'constants/currency.dart';
+part 'constants/payment_method.dart';
+part 'model/tabby/payfort_tabby_request.dart';
 
 part 'call_back.dart';
+
 
 //stc model
 part 'model/stc_pay/stc_generate_otp.request.dart';

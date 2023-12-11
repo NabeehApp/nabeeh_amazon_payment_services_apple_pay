@@ -74,8 +74,7 @@ public class ApplePayDelegate : NSObject,PKPaymentAuthorizationViewControllerDel
         
         
         if asyncSuccessful {
-            
-            var request = [String : String]()
+                        var request = [String : String]()
             request["digital_wallet"] = (requestData?["digital_wallet"] as? String) ?? ""
             request["command"] = (requestData?["command"] as? String) ?? "";
             request["merchant_reference"] = (requestData?["merchant_reference"] as? String) ?? "";

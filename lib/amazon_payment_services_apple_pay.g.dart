@@ -6,6 +6,69 @@ part of amazon_payment_services_apple_pay;
 // JsonSerializableGenerator
 // **************************************************************************
 
+PayfortTabbyRequest _$PayfortTabbyRequestFromJson(Map<String, dynamic> json) =>
+    PayfortTabbyRequest(
+      command: json['command'] as String? ?? 'PURCHASE',
+      accessCode: json['access_code'] as String,
+      amount: json['amount'] as String,
+      signature: json['signature'] as String? ?? '',
+      merchantIdentifier: json['merchant_identifier'] as String,
+      merchantReference: json['merchant_reference'] as String,
+      currency: json['currency'] as String? ?? 'SAR',
+      language: json['language'] as String? ?? 'AR',
+      phoneNumber: json['phone_number'] as String,
+      customerEmail: json['customer_email'] as String,
+      tokenName: json['token_name'] as String?,
+      paymentOption: json['payment_option'] as String? ?? 'TABBY',
+      customerIp: json['customer_ip'] as String?,
+      customerName: json['customer_name'] as String?,
+      merchantExtra: json['merchant_extra'] as String?,
+      merchantExtra1: json['merchant_extra1'] as String?,
+      merchantExtra2: json['merchant_extra2'] as String?,
+      merchantExtra3: json['merchant_extra3'] as String?,
+      merchantExtra4: json['merchant_extra4'] as String?,
+      merchantExtra5: json['merchant_extra5'] as String?,
+      returnUrl: json['return_url'] as String,
+      settlementReference: json['settlement_reference'] as String?,
+      orderDescription: json['order_description'] as String?,
+    );
+
+Map<String, dynamic> _$PayfortTabbyRequestToJson(PayfortTabbyRequest instance) {
+  final val = <String, dynamic>{
+    'command': instance.command,
+    'access_code': instance.accessCode,
+    'merchant_identifier': instance.merchantIdentifier,
+    'merchant_reference': instance.merchantReference,
+    'amount': instance.amount,
+    'currency': instance.currency,
+    'language': instance.language,
+    'customer_email': instance.customerEmail,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('token_name', instance.tokenName);
+  val['payment_option'] = instance.paymentOption;
+  writeNotNull('customer_ip', instance.customerIp);
+  writeNotNull('customer_name', instance.customerName);
+  writeNotNull('merchant_extra', instance.merchantExtra);
+  writeNotNull('merchant_extra1', instance.merchantExtra1);
+  writeNotNull('merchant_extra2', instance.merchantExtra2);
+  writeNotNull('merchant_extra3', instance.merchantExtra3);
+  writeNotNull('merchant_extra4', instance.merchantExtra4);
+  writeNotNull('merchant_extra5', instance.merchantExtra5);
+  val['return_url'] = instance.returnUrl;
+  writeNotNull('settlement_reference', instance.settlementReference);
+  val['phone_number'] = instance.phoneNumber;
+  writeNotNull('signature', instance.signature);
+  writeNotNull('order_description', instance.orderDescription);
+  return val;
+}
+
 STCGenerateOTPRequest _$STCGenerateOTPRequestFromJson(
         Map<String, dynamic> json) =>
     STCGenerateOTPRequest(
@@ -493,6 +556,7 @@ Map<String, dynamic> _$CreditCardPaymentResponseToJson(
   writeNotNull('merchant_extra5', instance.merchantExtra5);
   val['amount'] = instance.amount;
   val['sdk_token'] = instance.sdkToken;
+  writeNotNull('payment_option', instance.paymentOption);
   writeNotNull('eci', instance.eci);
   writeNotNull('settlement_reference', instance.settlementReference);
   writeNotNull('billing_state_province', instance.billingStateProvince);
@@ -517,7 +581,6 @@ Map<String, dynamic> _$CreditCardPaymentResponseToJson(
   writeNotNull(
       'recurring_transactions_count', instance.recurringTransactionsCount);
   writeNotNull('fort_id', instance.fortId);
-  writeNotNull('payment_option', instance.paymentOption);
   writeNotNull('authorization_code', instance.authorizationCode);
   writeNotNull('response_message', instance.responseMessage);
   writeNotNull('response_code', instance.responseCode);
