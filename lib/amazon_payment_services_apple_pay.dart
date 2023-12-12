@@ -48,6 +48,7 @@ part 'model/credit_card/credit_card_payment_response.dart';
 part 'model/apple_pay/payfort_apple_pay_request.dart';
 
 part 'model/apple_pay/payfort_apple_pay_response.dart';
+part 'model/tabby/payfort_tabby_request.dart';
 
 part 'amazon_payment_services_apple_pay.g.dart';
 
