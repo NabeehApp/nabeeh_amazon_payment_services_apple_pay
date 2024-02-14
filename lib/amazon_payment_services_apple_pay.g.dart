@@ -307,6 +307,77 @@ Map<String, dynamic> _$BasePaymentRequestToJson(BasePaymentRequest instance) {
   return val;
 }
 
+PayfortCheckStatusResponse _$PayfortCheckStatusResponseFromJson(
+        Map<String, dynamic> json) =>
+    PayfortCheckStatusResponse()
+      ..transactionCode = json['transaction_code'] as String?
+      ..transactionStatus = json['transaction_status'] as String?
+      ..responseCode = json['response_code'] as String?
+      ..signature = json['signature'] as String?
+      ..merchantIdentifier = json['merchant_identifier'] as String?
+      ..accessCode = json['access_code'] as String?
+      ..transactionMessage = json['transaction_message'] as String?
+      ..language = json['language'] as String?
+      ..fortId = json['fort_id'] as String?
+      ..refundedAmount = json['refunded_amount'] as String?
+      ..responseMessage = json['response_message'] as String?
+      ..merchantReference = json['merchant_reference'] as String?
+      ..queryCommand = json['query_command'] as String?
+      ..capturedAmount = json['captured_amount'] as String?
+      ..authorizedAmount = json['authorized_amount'] as String?
+      ..status = json['status'] as String?;
+
+Map<String, dynamic> _$PayfortCheckStatusResponseToJson(
+    PayfortCheckStatusResponse instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('transaction_code', instance.transactionCode);
+  writeNotNull('transaction_status', instance.transactionStatus);
+  writeNotNull('response_code', instance.responseCode);
+  writeNotNull('signature', instance.signature);
+  writeNotNull('merchant_identifier', instance.merchantIdentifier);
+  writeNotNull('access_code', instance.accessCode);
+  writeNotNull('transaction_message', instance.transactionMessage);
+  writeNotNull('language', instance.language);
+  writeNotNull('fort_id', instance.fortId);
+  writeNotNull('refunded_amount', instance.refundedAmount);
+  writeNotNull('response_message', instance.responseMessage);
+  writeNotNull('merchant_reference', instance.merchantReference);
+  writeNotNull('query_command', instance.queryCommand);
+  writeNotNull('captured_amount', instance.capturedAmount);
+  writeNotNull('authorized_amount', instance.authorizedAmount);
+  writeNotNull('status', instance.status);
+  return val;
+}
+
+PayfortCheckStatusRequest _$PayfortCheckStatusRequestFromJson(
+        Map<String, dynamic> json) =>
+    PayfortCheckStatusRequest(
+      queryCommand: json['query_command'] as String,
+      accessCode: json['access_code'] as String,
+      merchantIdentifier: json['merchant_identifier'] as String,
+      merchantReference: json['merchant_reference'] as String,
+      language: json['language'] as String,
+      signature: json['signature'] as String,
+    );
+
+Map<String, dynamic> _$PayfortCheckStatusRequestToJson(
+        PayfortCheckStatusRequest instance) =>
+    <String, dynamic>{
+      'query_command': instance.queryCommand,
+      'access_code': instance.accessCode,
+      'merchant_identifier': instance.merchantIdentifier,
+      'merchant_reference': instance.merchantReference,
+      'language': instance.language,
+      'signature': instance.signature,
+    };
+
 CreditCardPaymentRequest _$CreditCardPaymentRequestFromJson(
         Map<String, dynamic> json) =>
     CreditCardPaymentRequest(

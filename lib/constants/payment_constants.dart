@@ -29,7 +29,9 @@ enum PaymentConstants {
   //command
   purchaseCommand("PURCHASE"),
   authorizationCommand("AUTHORIZATION"),
-  generatedOtpCommand("GENERATE_OTP");
+  generatedOtpCommand("GENERATE_OTP"),
+  checkStatus("CHECK_STATUS"),
+  ;
 
   final String key;
 

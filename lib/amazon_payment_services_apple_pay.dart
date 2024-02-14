@@ -40,6 +40,9 @@ part 'model/sdk_token/sdk_token_response.dart';
 
 //payment
 part 'model/base_payment_request.dart';
+part 'model/check_status/payfort_check_status_response.dart';
+part 'model/check_status/payfort_check_status.request.dart';
+
 
 part 'model/credit_card/credit_card_payment_request.dart';
 
@@ -48,6 +51,7 @@ part 'model/credit_card/credit_card_payment_response.dart';
 part 'model/apple_pay/payfort_apple_pay_request.dart';
 
 part 'model/apple_pay/payfort_apple_pay_response.dart';
+
 part 'model/tabby/payfort_tabby_request.dart';
 
 part 'amazon_payment_services_apple_pay.g.dart';

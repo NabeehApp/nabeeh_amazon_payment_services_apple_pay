@@ -42,9 +42,9 @@ public class ApplePayDelegate : NSObject,PKPaymentAuthorizationViewControllerDel
         paymentRequest.merchantIdentifier = (requestData["apple_pay_merchant_id"] as? String) ?? "";
         if #available(iOS 12.1.1, *) {
             //            paymentRequest.supportedNetworks = [.visa, .masterCard, .mada, .amex]
-            paymentRequest.supportedNetworks = [.visa, .masterCard, .mada]
+            paymentRequest.supportedNetworks = [.visa, .masterCard, .mada, .amex]
         } else {
-            paymentRequest.supportedNetworks = [.visa, .masterCard]
+            paymentRequest.supportedNetworks = [.visa, .masterCard,.amex]
         };
         paymentRequest.merchantCapabilities = .capability3DS;
         
@@ -72,7 +72,7 @@ public class ApplePayDelegate : NSObject,PKPaymentAuthorizationViewControllerDel
         let customerPhoneFromApplePay = payment.billingContact?.phoneNumber?.stringValue ?? ""
         let customerNameFromApplePay = payment.billingContact?.name?.givenName ?? ""
         let paymentOption = payment.token.paymentMethod.network?.rawValue.uppercased()
-        print(paymentOption)
+//        print(paymentOption)
         if asyncSuccessful {
             
             var request = [String : String]()
@@ -98,6 +98,7 @@ public class ApplePayDelegate : NSObject,PKPaymentAuthorizationViewControllerDel
             request["merchant_extra3"] = (requestData?["merchant_extra3"] as? String) ?? "";
             request["merchant_extra4"] = (requestData?["merchant_extra4"] as? String) ?? "";
             request["merchant_extra5"] = (requestData?["merchant_extra5"] as? String) ?? "";
+            request["device_id"] = (requestData?["device_id"] as? String) ?? "";
             
             request["customer_email"] = (requestData?["customer_email"] as? String) ?? customerEmailFromApplePay;
             request["phone_number"] = (requestData?["phone_number"] as? String) ?? customerPhoneFromApplePay;
@@ -110,7 +111,7 @@ public class ApplePayDelegate : NSObject,PKPaymentAuthorizationViewControllerDel
             payFort?.presentAsDefault = true
             payFort?.isShowResponsePage = isShowResponsePage ?? true
             
-            print("Request Payfort Get :\(request)")
+//            print("Request Payfort Get :\(request)")
             
             
             payFort?.callPayFortForApplePay(
@@ -119,7 +120,7 @@ public class ApplePayDelegate : NSObject,PKPaymentAuthorizationViewControllerDel
                 currentViewController: viewController ?? ViewHelper.visibleViewController(),
                 success: { requestDic, responeDic in
                     
-                    print("succeeded: - \(requestDic) - \(responeDic)")
+//                    print("succeeded: - \(requestDic) - \(responeDic)")
                     self.channel?.invokeMethod(Channels.applePaySuccess, arguments: responeDic)
                     controller.dismiss(animated: true)
                     return
@@ -127,7 +128,7 @@ public class ApplePayDelegate : NSObject,PKPaymentAuthorizationViewControllerDel
                 },
                 faild: { requestDic, responeDic, message in
                     
-                    print("failed: \(message) - \(requestDic) - \(responeDic)")
+//                    print("failed: \(message) - \(requestDic) - \(responeDic)")
                     
 
                     self.channel?.invokeMethod(Channels.applePayFailed, arguments: ["message": message,"details": responeDic])
@@ -138,7 +139,7 @@ public class ApplePayDelegate : NSObject,PKPaymentAuthorizationViewControllerDel
                 })
         } else {
             
-            print("asyncSuccessful: \(asyncSuccessful)")
+//            print("asyncSuccessful: \(asyncSuccessful)")
         
             
             self.channel?.invokeMethod(Channels.applePayFailed, arguments: ["message": "error","details":[]])
