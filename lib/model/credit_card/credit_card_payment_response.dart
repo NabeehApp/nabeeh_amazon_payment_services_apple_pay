@@ -1,6 +1,6 @@
 // ignore_for_file: invalid_annotation_target
 
-part of amazon_payment_services_apple_pay;
+part of '../../amazon_payment_services_apple_pay.dart';
 
 @JsonSerializable(fieldRename: FieldRename.snake, includeIfNull: false, explicitToJson: true)
 class CreditCardPaymentResponse extends CreditCardPaymentRequest {

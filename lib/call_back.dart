@@ -1,4 +1,4 @@
-part of amazon_payment_services_apple_pay;
+part of 'amazon_payment_services_apple_pay.dart';
 
 class ApplePayResultCallback {
   final void Function(LinkedHashMap<Object?, Object?> result) onSucceeded;

@@ -1,6 +1,5 @@
-part of amazon_payment_services_apple_pay;
+part of '../amazon_payment_services_apple_pay.dart';
 
-@deprecated
 enum PaymentConstants {
   // prod constant
   requestPhrase("requestPhrase"),

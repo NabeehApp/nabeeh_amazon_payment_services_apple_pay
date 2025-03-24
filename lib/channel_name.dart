@@ -1,4 +1,4 @@
-part of amazon_payment_services_apple_pay;
+part of 'amazon_payment_services_apple_pay.dart';
 
 class AmazonPaymentServicesApplePayChannels {
   const AmazonPaymentServicesApplePayChannels._();
